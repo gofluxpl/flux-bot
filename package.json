@@ -1,0 +1,23 @@
+{
+  "name": "flux-bot",
+  "version": "1.0.0",
+  "description": "The official discord bot of the goflux server",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "IJakePL",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^2.2.0",
+    "axios": "^1.7.9",
+    "discord-api-types": "^0.37.70",
+    "discord.js": "^13.16.0",
+    "dotenv": "^16.4.7",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
