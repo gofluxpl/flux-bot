@@ -69,7 +69,7 @@ module.exports = {
         name: `Status of our services`,
         iconURL: client.user.displayAvatarURL({ dynamic: true, size: 1024 }),
       })
-      .setColor("#0074e1");
+      .setColor("#3eaf7c");
 
     if (notWorkingText) {
       embed.addFields({ name: "Errors:", value: notWorkingText });

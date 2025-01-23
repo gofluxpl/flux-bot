@@ -10,9 +10,9 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setDescription(
-        "` ⏰ Latency `: **" + lat + "ms**\n` ⏳ Api `: **" + api + "ms**",
+        "` Latency `: **" + lat + "ms**\n` Api `: **" + api + "ms**",
       )
-      .setColor("#0074e1");
+      .setColor("#3eaf7c");
     await interaction.reply({
       embeds: [embed],
     });
