@@ -3,21 +3,21 @@ const { MessageEmbed } = require("discord.js");
 const { checkStatus } = require("../../data/status");
 
 const domainsToCheck = [
-  { 
-    name: "goflux.pl", 
-    url: "https://goflux.pl/" 
+  {
+    name: "goflux.pl",
+    url: "https://goflux.pl/",
   },
-  { 
-    name: "docs.goflux.pl", 
-    url: "https://docs.goflux.pl/" 
+  {
+    name: "docs.goflux.pl",
+    url: "https://docs.goflux.pl/",
   },
-  { 
-    name: "status.goflux.pl", 
-    url: "https://status.goflux.pl/" 
+  {
+    name: "status.goflux.pl",
+    url: "https://status.goflux.pl/",
   },
-  { 
-    name: "guide.goflux.pl", 
-    url: "https://guide.goflux.pl/" 
+  {
+    name: "guide.goflux.pl",
+    url: "https://guide.goflux.pl/",
   },
 ];
 

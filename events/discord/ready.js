@@ -9,11 +9,7 @@ module.exports = {
   name: "ready",
 
   execute: async (client) => {
-    console.log(
-      "* Bot " +
-        client.user.username +
-        " is ready!",
-    );
+    console.log("* Bot " + client.user.username + " is ready!");
 
     const packageData = JSON.parse(fs.readFileSync("./package.json", "utf8"));
     const packageVersion = packageData.version;
@@ -28,10 +24,7 @@ module.exports = {
       });
     }, 5000);
 
-    const baseDir = path.join(
-      process.cwd(),
-      "/slash",
-    );
+    const baseDir = path.join(process.cwd(), "/slash");
 
     fs.readdirSync(baseDir).forEach((dirs) => {
       const dirPath = path.join(baseDir, dirs);
@@ -60,9 +53,7 @@ module.exports = {
           })
           .catch((err) => console.log(err));
 
-        console.log(
-          "* Slash commands registered!",
-        );
+        console.log("* Slash commands registered!");
       } catch (error) {
         console.error(error);
       }

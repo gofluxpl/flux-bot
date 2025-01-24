@@ -11,43 +11,31 @@ process.on("uncaughtException", console.log);
 
 client.collection_slash = new Collection();
 
-fs.readdirSync(process.cwd() + "/slash").forEach(
-  (dirs) => {
-    const fullPath = path.join(
-      process.cwd(),
-      "/slash",
-      dirs,
-    );
-    if (fs.statSync(fullPath).isDirectory()) {
-      const files = fs
-        .readdirSync(fullPath)
-        .filter((file) => file.endsWith(".js") && !file.endsWith(".md"));
-      for (const file of files) {
-        const slash = require(path.join(fullPath, file));
-        client.collection_slash.set(slash.data.name, slash);
-      }
+fs.readdirSync(process.cwd() + "/slash").forEach((dirs) => {
+  const fullPath = path.join(process.cwd(), "/slash", dirs);
+  if (fs.statSync(fullPath).isDirectory()) {
+    const files = fs
+      .readdirSync(fullPath)
+      .filter((file) => file.endsWith(".js") && !file.endsWith(".md"));
+    for (const file of files) {
+      const slash = require(path.join(fullPath, file));
+      client.collection_slash.set(slash.data.name, slash);
     }
-  },
-);
+  }
+});
 
-fs.readdirSync(process.cwd() + "/events").forEach(
-  (dirs) => {
-    const fullPath = path.join(
-      process.cwd(),
-      "/events",
-      dirs,
-    );
-    if (fs.statSync(fullPath).isDirectory()) {
-      const files = fs
-        .readdirSync(fullPath)
-        .filter((file) => file.endsWith(".js") && !file.endsWith(".md"));
-      for (const file of files) {
-        const event = require(path.join(fullPath, file));
-        client.on(event.name, (...args) => event.execute(client, ...args));
-      }
+fs.readdirSync(process.cwd() + "/events").forEach((dirs) => {
+  const fullPath = path.join(process.cwd(), "/events", dirs);
+  if (fs.statSync(fullPath).isDirectory()) {
+    const files = fs
+      .readdirSync(fullPath)
+      .filter((file) => file.endsWith(".js") && !file.endsWith(".md"));
+    for (const file of files) {
+      const event = require(path.join(fullPath, file));
+      client.on(event.name, (...args) => event.execute(client, ...args));
     }
-  },
-);
+  }
+});
 
 function formatDateTime(dateTimeString) {
   const dateTime = new Date(dateTimeString);
