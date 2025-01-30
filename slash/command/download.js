@@ -306,7 +306,7 @@ async function fetchCommits(owner, repo) {
     `https://api.github.com/repos/${owner}/${repo}/commits`,
     {
       params: {
-        per_page: 10,
+        per_page: 5,
       },
     },
   );
@@ -318,7 +318,7 @@ async function fetchReleases(owner, repo) {
     `https://api.github.com/repos/${owner}/${repo}/releases`,
     {
       params: {
-        per_page: 10,
+        per_page: 5,
       },
     },
   );
