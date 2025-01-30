@@ -10,7 +10,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setDescription(
-        "` Latency `: **" + lat + "ms**\n` Api `: **" + api + "ms**",
+        "` Latency `: **" + lat + "ms**\n` Discord API `: **" + api + "ms**",
       )
       .setColor("#3eaf7c");
     await interaction.reply({

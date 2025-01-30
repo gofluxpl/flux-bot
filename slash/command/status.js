@@ -12,12 +12,16 @@ const domainsToCheck = [
     url: "https://docs.goflux.pl/",
   },
   {
-    name: "status.goflux.pl",
-    url: "https://status.goflux.pl/",
+    name: "pkg.goflux.pl",
+    url: "https://pkg.goflux.pl/",
   },
   {
     name: "guide.goflux.pl",
     url: "https://guide.goflux.pl/",
+  },
+  {
+    name: "status.goflux.pl",
+    url: "https://status.goflux.pl/",
   },
 ];
 
