@@ -13,8 +13,8 @@ module.exports = {
         .addChoices(
           { name: "Home : Getting Started", value: "getting_started" },
           { name: "Home : Installation", value: "installation" },
-          { name: "Home : Documentation", value: "documentation" }
-        )
+          { name: "Home : Documentation", value: "documentation" },
+        ),
     ),
 
   async execute(client, interaction) {
@@ -23,9 +23,7 @@ module.exports = {
     const embed = new MessageEmbed()
       .setTitle("Guide Information")
       .setColor("#3eaf7c")
-      .setDescription(
-        `**Query**: ${query.replace("_", " ")}`
-      );
+      .setDescription(`**Query**: ${query.replace("_", " ")}`);
 
     await interaction.reply({
       embeds: [embed],

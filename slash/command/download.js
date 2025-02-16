@@ -50,12 +50,6 @@ module.exports = {
             value: "bot",
           },
           {
-            label: "Website",
-            description: "Click me",
-            emoji: "1332298750978166814",
-            value: "website",
-          },
-          {
             label: "Radio24",
             description: "Click me",
             emoji: "1333158014307405886",
@@ -176,56 +170,6 @@ module.exports = {
               new MessageEmbed()
                 .setAuthor({
                   name: `Download the latest version of Flux Bot`,
-                  iconURL: client.user.displayAvatarURL({
-                    dynamic: true,
-                    size: 1024,
-                  }),
-                })
-                .addFields({
-                  name: "Latest commits:",
-                  value: text,
-                })
-                .setFooter({
-                  text: "Flux © 2025 ・ Version: " + packageVersion,
-                })
-                .setColor("#3eaf7c"),
-            ],
-            allowedMentions: { repliedUser: false },
-            components: [row],
-          });
-        }
-
-        if (i.values[0] === "website") {
-          let text = "";
-          let releasesText = "";
-
-          const owner = "gofluxpl";
-          const repo = "website";
-          const commits = await fetchCommits(owner, repo);
-
-          const commitInfo = commits.map((commit) => {
-            return {
-              url: commit.html_url,
-              message: commit.commit.message,
-              sha: commit.sha.slice(0, 7),
-            };
-          });
-
-          commitInfo.forEach((info) => {
-            text += `[\`${info.sha}\`](${info.url}) ${info.message}\n`;
-          });
-
-          const releases = await fetchReleases(owner, repo);
-
-          releases.forEach((release) => {
-            releasesText += `[\`${release.name}\`](${release.zipball_url}) - ${release.tag_name}\n`;
-          });
-
-          i.update({
-            embeds: [
-              new MessageEmbed()
-                .setAuthor({
-                  name: `Download the latest version of Website`,
                   iconURL: client.user.displayAvatarURL({
                     dynamic: true,
                     size: 1024,

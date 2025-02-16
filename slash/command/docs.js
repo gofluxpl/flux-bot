@@ -13,17 +13,15 @@ module.exports = {
         .addChoices(
           { name: "Home : Getting Started", value: "getting_started" },
           { name: "Home : Installation", value: "installation" },
-          { name: "Home : Documentation", value: "documentation" }
-        )
+          { name: "Home : Documentation", value: "documentation" },
+        ),
     )
     .addStringOption((option) =>
       option
         .setName("version")
         .setDescription("Select a version")
         .setRequired(false)
-        .addChoices(
-          { name: "Flux 1.0.0", value: "1.0.0" }
-        )
+        .addChoices({ name: "Flux 1.0.0", value: "1.0.0" }),
     ),
 
   async execute(client, interaction) {
@@ -35,7 +33,7 @@ module.exports = {
       .setColor("#3eaf7c")
       .setDescription(
         `**Query**: ${query.replace("_", " ")}\n` +
-          (version ? `**Version**: ${version}` : "**Version**: Not specified")
+          (version ? `**Version**: ${version}` : "**Version**: Not specified"),
       );
 
     await interaction.reply({
